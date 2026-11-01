@@ -1,5 +1,11 @@
+mod dir;
+
 fn main() {
     let subcommand = std::env::args().nth(1).expect("subcommand is not given");
 
-    panic!("unknown subcommand: {subcommand}");
+    if subcommand == "dir" {
+        dir::run();
+    } else {
+        panic!("unknown subcommand: {subcommand}");
+    }
 }
